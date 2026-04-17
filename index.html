@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>moon side coffee | ふじみ野のコーヒーとベーグル</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <div></div>
+  <button class="hamburger" id="hamburger" aria-label="メニュー">
+    <span></span><span></span><span></span>
+  </button>
+  <div class="nav-links" id="navLinks">
+    <a href="#top">HOME</a>
+    <a href="#instagram">INSTAGRAM</a>
+    <a href="#concept">ABOUT US</a>
+    <a href="#access">ACCESS</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg hero-bg-1 active" id="heroBg1"></div>
+  <div class="hero-bg hero-bg-2" id="heroBg2"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Fujimino, Saitama — Coffee & Bagel</div>
+    <div class="hero-logo-img">
+      <img src="assets/logo/logo-white.png" alt="moon side coffee">
+    </div>
+    <p class="hero-sub">
+      自家製焙煎コーヒーと、毎朝手ごねするベーグル。<br>
+      月の光のように、静かで温かな場所。
+    </p>
+    <div class="hero-ctas">
+      <a href="#instagram" class="btn-w">News</a>
+      <a href="#access" class="btn-ow">Access</a>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <div class="scroll-bar"></div>
+    <span>Scroll</span>
+  </div>
+  
+  <!-- ヒーロー下端の波 -->
+  <svg class="hero-wave wiggle-svg" viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path d="M0,60 C180,110 360,10 540,60 C720,110 900,10 1080,60 C1260,110 1380,30 1440,50 L1440,120 L0,120 Z" fill="#E8E0D2"/>
+  </svg>
+</section>
+
+
+
+<!-- CONCEPT -->
+<section class="concept" id="concept">
+  <div class="concept-inner">
+    <div class="concept-illust rv">
+      <img src="assets/illustrations/man-cat.png" alt="moon side coffee illustration">
+    </div>
+    <div class="concept-text">
+      <div class="sec-tag rv">About Us</div>
+      <h2 class="rv">About <em>us.</em></h2>
+      <div class="h2-jp rv">暮らしに寄り添う、コーヒーとベーグルを</div>
+      <p class="concept-body rv">
+        『今日は仕事の前に、ちょっとコーヒー飲んでいこう』<br>
+        『早起きして、焼き立てのベーグルを食べたいな』<br><br>
+        そんなふうに、誰かの暮らしの一部になれたら。<br>
+        誰かのひとときを、豊かな時間にできたら。<br>
+        そんな想いでコーヒーとベーグルを作っています。<br><br>
+        当店のストーリーは <a href="#" style="color:var(--brown);border-bottom:1px solid var(--latte);padding-bottom:1px;text-decoration:none">こちら</a> からご覧いただけます。
+      </p>
+      
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<div class="gallery-wrap">
+<div class="gallery">
+  <div class="gitem"><img src="assets/images/espresso-machine.jpg" alt="エスプレッソ" loading="lazy"><div class="gitem-cap">Espresso</div></div>
+  <div class="gitem"><img src="assets/images/hands.jpg" alt="コーヒーを持つ手" loading="lazy"><div class="gitem-cap">Crafted with care</div></div>
+  <div class="gitem"><img src="assets/images/bagel.jpg" alt="ベーグル" loading="lazy"><div class="gitem-cap">Handmade bagel</div></div>
+  <div class="gitem"><img src="assets/images/interior.jpg" alt="店内" loading="lazy"><div class="gitem-cap">Our space</div></div>
+  <div class="gitem"><img src="assets/images/espresso-machine.jpg" alt="エスプレッソ" loading="lazy"><div class="gitem-cap">Espresso</div></div>
+  <div class="gitem"><img src="assets/images/hands.jpg" alt="コーヒーを持つ手" loading="lazy"><div class="gitem-cap">Crafted with care</div></div>
+  <div class="gitem"><img src="assets/images/bagel.jpg" alt="ベーグル" loading="lazy"><div class="gitem-cap">Handmade bagel</div></div>
+  <div class="gitem"><img src="assets/images/interior.jpg" alt="店内" loading="lazy"><div class="gitem-cap">Our space</div></div>
+</div>
+</div>
+
+<!-- WAVE ANIMATED (Menuの前) -->
+<div class="wave-scroll" id="waveScroll">
+  <svg viewBox="0 0 2880 90" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" id="waveSvg" class="wiggle-svg">
+    <path d="M0,55 C240,15 480,75 720,35 C960,5 1200,65 1440,30 C1680,15 1920,65 2160,35 C2400,5 2640,65 2880,30 L2880,90 L0,90 Z" fill="#FAFAF6"/>
+  </svg>
+</div>
+
+<!-- INSTAGRAM -->
+<section class="insta-sec" id="instagram">
+  <div class="insta-inner">
+    <div class="insta-header">
+      <div class="insta-left">
+        <div class="sec-tag rv">@moonside2022</div>
+        <h2 class="rv">Instagram.</h2>
+        <div class="h2-jp rv">最新の投稿・お知らせ</div>
+      </div>
+      <a href="https://www.instagram.com/moonside2022/" target="_blank" rel="noopener" class="insta-follow rv">
+        <span>Follow us on Instagram</span>
+        <span class="insta-arrow">→</span>
+      </a>
+    </div>
+    <div class="insta-grid">
+      <a href="https://www.instagram.com/moonside2022/" target="_blank" rel="noopener" class="insta-item rv"><img src="assets/images/bagel.jpg" alt="自家製ベーグル" loading="lazy"><div class="insta-overlay"><div class="insta-ig-icon">◉</div><div class="insta-cap">自家製ベーグル</div></div></a>
+      <a href="https://www.instagram.com/moonside2022/" target="_blank" rel="noopener" class="insta-item rv"><img src="assets/images/hands.jpg" alt="モーニングコーヒー" loading="lazy"><div class="insta-overlay"><div class="insta-ig-icon">◉</div><div class="insta-cap">モーニングコーヒー</div></div></a>
+      <a href="https://www.instagram.com/moonside2022/" target="_blank" rel="noopener" class="insta-item rv"><img src="assets/images/interior.jpg" alt="店内の様子" loading="lazy"><div class="insta-overlay"><div class="insta-ig-icon">◉</div><div class="insta-cap">店内の様子</div></div></a>
+    </div>
+  </div>
+</section>
+
+<!-- BAGEL -->
+<!-- BAGEL -->
+<section class="bagel-sec" id="bagel">
+  <div class="bagel-inner">
+    <div class="bagel-text-wrap rv">
+      <div class="sec-tag">Specialty</div>
+      <h2>Handmade<br><em>Bagel.</em></h2>
+      <div class="h2-jp">手ごね自家製ベーグル</div>
+      <p class="concept-body">
+        毎日食べたいベーグル。<br><br>
+        当店のベーグルをお召し上がりいただいたお客様からは、<br>
+        「今まで食べたベーグルと違う！」<br>
+        「ふんわりもっちりしていて、食べやすい！」<br>
+        というお声をたくさんいただいております。
+      </p>
+      <p class="concept-body" style="margin-top:-16px">
+        そのおいしさの理由は、特別な低温長時間発酵によるもの。<br>
+        酵母が時間をかけて生地を発酵させることで、<br>
+        独特の風味やもちもちの食感が生まれます。<br><br>
+        材料は小麦、水、砂糖、塩、酵母と、とてもシンプル。<br>
+        おいしくてヘルシーで安心なベーグルをつくり続けています。
+      </p>
+      
+    </div>
+    <div class="bagel-img-area rv">
+      <img src="assets/images/bagel.jpg" alt="自家製ベーグル" loading="lazy">
+      <div class="bagel-overlay">
+        <div class="bagel-overlay-text">Handmade every morning</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- COFFEE -->
+<section class="menu-sec" id="menu">
+  <div class="menu-inner">
+    <div class="coffee-layout">
+      <div class="coffee-photos rv">
+        <div class="coffee-photo-main">
+          <img src="assets/images/espresso-machine.jpg" alt="エスプレッソマシン" loading="lazy">
+        </div>
+      </div>
+      <div class="coffee-text">
+        <div class="sec-tag rv">Our Craft</div>
+        <h2 class="rv">Coffee.</h2>
+        <div class="h2-jp rv">自家焙煎コーヒーのこだわり</div>
+        <p class="concept-body rv">
+          コーヒーは半熱風式の6kg焙煎機による、自家焙煎コーヒーです。<br>
+          イタリア製エスプレッソマシン、ラ・マルゾッコで抽出。<br>
+          オーダー毎に一杯ずつ丁寧に抽出しています。
+        </p>
+        <p class="concept-body rv" style="margin-top:-16px">
+          コーヒー豆の特徴を最大限に引き出し、<br>
+          産地ごとの味をお楽しみいただけます。<br>
+          フレンチプレスでもご提供しております。<br><br>
+          品質と味に徹底的にこだわり、<br>
+          お客様に心地よいコーヒータイムをお届けします。
+        </p>
+        
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WAVE → ACCESS (黒) -->
+<div class="wdiv-access" style="background:#F2EDE4">
+  <svg class="wiggle-svg" viewBox="0 0 1440 80" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:120%;margin-left:-10%;display:block;margin-bottom:-1px">
+    <path d="M0,40 C300,80 600,0 900,50 C1100,80 1300,20 1440,40 L1440,80 L0,80 Z" fill="#1C1410"/>
+  </svg>
+</div>
+
+<!-- ACCESS (黒背景) -->
+<section class="access-sec" id="access">
+  <div class="access-inner">
+    <div class="sec-tag rv">Visit Us</div>
+    <h2 class="rv" style="font-size:42px">Access.</h2>
+    <div class="h2-jp rv">アクセス・営業時間</div>
+    <div class="access-grid">
+      <div class="rv">
+        <div class="access-map">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3232.911760600227!2d139.5154987!3d35.8756792!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6018dd200774f979%3A0xbc89c708aa43395d!2sMOON%20SIDE%20COFFEE!5e0!3m2!1sja!2sjp!4v1776414080054!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+      <div class="info-list rv d1">
+        <div class="info-row">
+          <div class="info-key">Address</div>
+          <div class="info-val">
+            <strong>〒356-0004</strong>
+            埼玉県ふじみ野市上福岡1-14-21
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-key">Hours</div>
+          <div class="info-val">
+            <div class="hours-row">
+              <div class="hour-pill"><div class="hour-day">火・水・木</div><div class="hour-time">6:30 – 14:00</div></div>
+              <div class="hour-pill"><div class="hour-day">土・日・祝</div><div class="hour-time">8:30 – 15:00</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-key">Closed</div>
+          <div class="info-val">月・金</div>
+        </div>
+        <div class="info-row">
+          <div class="info-key">Notes</div>
+          <div class="info-val">
+            <small>※商品が無くなり次第、営業終了となる場合があります。</small>
+            <small style="margin-top:8px;display:block">※毎週木曜日はベーグルの販売はお休みとなり、日替わりの焼き菓子とドリンクをご用意しております。</small>
+            <small style="margin-top:8px;display:block">※月により営業時間が異なる場合がございます。詳しくはインスタグラムをご覧ください。</small>
+          </div>
+        </div>
+        <div class="info-row">
+          <div class="info-key">SNS</div>
+          <div class="info-val">
+            <strong>@moonside_coffee</strong>
+            <small>本日のベーグルや季節メニューをInstagramで毎朝お知らせしています。</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div>
+      <img src="assets/logo/logo-white.png" alt="moon side coffee" class="footer-logo-img">
+      <div class="footer-desc">
+        自家製焙煎コーヒーと手作りベーグル。<br>
+        ゆるやかな時間の中で、<br>
+        あなただけの居場所を。
+      </div>
+    </div>
+    <div>
+      <div class="footer-h">Menu</div>
+      <div class="footer-links">
+        <a href="#top">Home</a>
+        <a href="#instagram">Instagram</a>
+        <a href="#concept">About us</a>
+        <a href="#access">Access</a>
+      </div>
+    </div>
+    
+  </div>
+  <div class="footer-bottom">
+    <span>© 2024 moon side coffee. All Rights Reserved.</span>
+    <span>埼玉県ふじみ野市</span>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
