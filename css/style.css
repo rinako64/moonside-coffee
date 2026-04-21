@@ -14,6 +14,8 @@
   --line:rgba(92,61,44,.12);
 }
 html{scroll-behavior:smooth;overflow-x:hidden}
+/* 改行制御ユーティリティ */
+.nobr{display:inline-block;white-space:nowrap}
 body{
   font-family:'Noto Sans JP',sans-serif;
   background:var(--cream);
@@ -93,7 +95,7 @@ nav.scrolled{
   background-image:url("../assets/images/exterior.jpg");
 }
 .hero-bg-2{
-  background-image:url("../assets/images/interior.jpg");
+  background-image:url("../assets/images/hero-2.jpg");
 }
 .hero-overlay{
   position:absolute;inset:0;
@@ -476,16 +478,6 @@ h2{
   width:100%;height:100%;object-fit:cover;
   filter:saturate(.85) brightness(.97);
 }
-.bagel-overlay{
-  position:absolute;bottom:0;left:0;right:0;
-  background:linear-gradient(to top,rgba(28,20,16,.35),transparent 60%);
-  padding:28px;
-}
-.bagel-overlay-text{
-  font-family:'DM Sans',sans-serif;
-  font-size:11px;letter-spacing:.2em;text-transform:uppercase;
-  color:rgba(250,250,246,.8);
-}
 .bagel-list{display:flex;flex-direction:column;gap:0;margin-top:28px}
 .bitem{
   display:flex;align-items:center;justify-content:space-between;
@@ -866,9 +858,14 @@ footer{
   }
 
   /* HERO */
-  .hero-content{padding:0 32px;max-width:100%}
-  .hero-logo-img{max-width:300px}
+  .hero-content{
+    padding:0 32px;max-width:100%;
+    align-items:center;text-align:center;
+  }
+  .hero-eyebrow{justify-content:center}
+  .hero-logo-img{max-width:300px;margin-left:auto;margin-right:auto}
   .hero-sub{font-size:12px}
+  .hero-ctas{justify-content:center}
   .hero-scroll{left:32px;bottom:48px}
 
   /* CONCEPT */
@@ -894,27 +891,52 @@ footer{
 
   /* BAGEL */
   .bagel-inner{
-    grid-template-columns:1fr;
+    display:flex;
+    flex-direction:column;
     min-height:auto;
   }
   .bagel-text-wrap{
-    padding:60px 32px;
+    display:contents;
+  }
+  .bagel-title-block{
     order:1;
+    padding:60px 32px 24px;
   }
   .bagel-img-area{
-    min-height:400px;
     order:2;
-    -webkit-mask-image:linear-gradient(to bottom,#000 70%,transparent 100%);
-    mask-image:linear-gradient(to bottom,#000 70%,transparent 100%);
+    min-height:300px;
+    -webkit-mask-image:none;
+    mask-image:none;
+  }
+  .bagel-body-block{
+    order:3;
+    padding:32px 32px 60px;
   }
 
   /* COFFEE */
   .menu-sec{padding:60px 0 0}
-  .menu-inner{padding:0 32px 60px}
+  .menu-inner{padding:0;max-width:none}
   .coffee-layout{
-    grid-template-columns:1fr;gap:40px;
+    display:flex;
+    flex-direction:column;
+    gap:0;
   }
-  .coffee-photo-main{aspect-ratio:4/3}
+  .coffee-text{display:contents}
+  .coffee-title-block{
+    order:1;
+    padding:0 32px 24px;
+  }
+  .coffee-photos{
+    order:2;
+  }
+  .coffee-photo-main{
+    aspect-ratio:4/3;
+    border-radius:0;
+  }
+  .coffee-body-block{
+    order:3;
+    padding:32px 32px 60px;
+  }
 
   /* ACCESS */
   .access-inner{padding:0 32px 60px}
@@ -934,13 +956,15 @@ footer{
 
 /* ========== RESPONSIVE — MOBILE (max-width: 480px) ========== */
 @media(max-width:480px){
+  /* PC専用改行をモバイルで無効化 */
+  br.pc{display:none}
+
   /* HERO */
   .hero{min-height:100svh}
   .hero-content{padding:0 20px}
   .hero-eyebrow{font-size:9px;margin-bottom:20px}
   .hero-logo-img{max-width:220px}
   .hero-sub{font-size:11px;line-height:1.8;margin-bottom:28px}
-  .hero-sub br{display:none}
   .hero-ctas{flex-direction:column;gap:10px}
   .btn-w,.btn-ow{text-align:center;padding:14px 24px}
   .hero-scroll{display:none}
@@ -950,7 +974,6 @@ footer{
   .concept-inner{padding:0 20px 48px}
   .concept-illust img{max-width:260px}
   .concept-body{font-size:12px}
-  .concept-body br{display:none}
   h2{font-size:36px}
   .h2-jp{font-size:12px;margin-bottom:24px}
 
@@ -966,13 +989,14 @@ footer{
   .insta-grid{grid-template-columns:repeat(2,1fr);gap:8px}
 
   /* BAGEL */
-  .bagel-text-wrap{padding:48px 20px}
-  .bagel-text-wrap .concept-body br{display:none}
-  .bagel-img-area{min-height:300px}
+  .bagel-title-block{padding:48px 20px 20px}
+  .bagel-body-block{padding:24px 20px 48px}
+  .bagel-img-area{min-height:240px}
 
   /* COFFEE */
-  .menu-inner{padding:0 20px 48px}
-  .coffee-text .concept-body br{display:none}
+  .menu-inner{padding:0}
+  .coffee-title-block{padding:0 20px 20px}
+  .coffee-body-block{padding:24px 20px 48px}
 
   /* ACCESS */
   .access-sec{padding:60px 0 0}
