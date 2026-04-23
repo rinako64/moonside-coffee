@@ -5,3 +5,10 @@ node_modules/
 .vscode/
 .idea/
 Thumbs.db
+
+# WordPressテーマの一時展開フォルダ（zipから解凍した作業用、再zipの元）
+_theme_work/
+
+# 画像受け渡し用の一時ファイル（プロジェクトルート）
+/image.png
+/image copy*.png

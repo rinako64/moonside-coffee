@@ -1015,6 +1015,554 @@ footer{
 .hero,.hero *,
 .access-sec,.access-sec *,
 footer,footer *,
-nav.scrolled,nav.scrolled *{
+nav.scrolled,nav.scrolled *,
+.about-hero,.about-hero *,
+.closing-sec,.closing-sec *{
   cursor:url('../assets/illustrations/bagel-cursor-white.png') 24 24, auto !important;
+}
+
+/* ============================================================
+   ABOUT US PAGE
+   ============================================================ */
+
+/* 現在地を示すナビリンク（WP: .current-menu-item / 静的: .is-current） */
+.nav-links a.is-current,
+.nav-links .current-menu-item > a,
+.nav-links .current_page_item > a{
+  color:var(--latte);
+}
+.nav-links a.is-current::after,
+.nav-links .current-menu-item > a::after,
+.nav-links .current_page_item > a::after{
+  content:'';display:block;height:1px;background:var(--latte);
+  margin-top:4px;opacity:.7;
+}
+
+/* ---------- ABOUT HERO ---------- */
+.about-hero{
+  position:relative;
+  height:52vh;min-height:420px;
+  overflow:hidden;
+  background:var(--black);
+}
+.about-hero-bg{
+  position:absolute;inset:0;
+  background-image:url("../assets/images/exterior.jpg");
+  background-size:cover;background-position:center 40%;
+  filter:brightness(.55) saturate(.78) contrast(1.02);
+  transform:scale(1.03);
+  animation:aboutHeroZoom 18s ease-in-out infinite alternate;
+}
+@keyframes aboutHeroZoom{
+  from{transform:scale(1.03)}
+  to{transform:scale(1.08)}
+}
+.about-hero-overlay{
+  position:absolute;inset:0;
+  background:
+    linear-gradient(to bottom,rgba(28,20,16,.35) 0%,rgba(28,20,16,.2) 40%,rgba(28,20,16,.55) 100%),
+    linear-gradient(to right,rgba(28,20,16,.55) 0%,rgba(28,20,16,.15) 60%,rgba(28,20,16,.15) 100%);
+}
+.about-hero-content{
+  position:relative;z-index:10;
+  height:100%;
+  display:flex;flex-direction:column;justify-content:center;
+  padding:0 80px;
+  max-width:900px;
+}
+.about-hero-title{
+  font-family:'DM Sans',sans-serif;
+  font-size:80px;font-weight:300;
+  color:var(--white);
+  line-height:.95;letter-spacing:-.01em;
+  margin:16px 0 16px;
+  opacity:0;animation:fadeUp .9s ease .5s forwards;
+}
+.about-hero-title em{
+  font-style:italic;font-weight:300;
+  color:var(--latte);
+}
+.about-hero-sub{
+  font-size:13px;font-weight:300;letter-spacing:.14em;
+  color:rgba(250,250,246,.78);
+  line-height:1.9;
+  opacity:0;animation:fadeUp .9s ease .75s forwards;
+}
+.about-hero-scroll{
+  position:absolute;bottom:44px;left:0;
+  display:flex;align-items:center;gap:12px;
+  opacity:0;animation:fadeIn 1s ease 1.2s forwards;
+}
+.about-hero-scroll span{
+  font-family:'DM Sans',sans-serif;
+  font-size:9px;letter-spacing:.3em;
+  color:rgba(250,250,246,.5);text-transform:uppercase;
+}
+
+/* ---------- INTRO ---------- */
+.story-intro{
+  background:var(--cream);
+  padding:76px 0 68px;
+  position:relative;
+}
+.story-intro-inner{
+  max-width:760px;margin:0 auto;padding:0 48px;
+  text-align:center;
+}
+.story-intro-inner .sec-tag{justify-content:center}
+.story-intro-inner .sec-tag::after{
+  content:'';width:20px;height:1px;background:var(--latte2);
+}
+.story-intro-body{
+  font-size:14px;font-weight:300;line-height:2.2;
+  color:var(--text);letter-spacing:.06em;
+  margin:8px auto 0;
+}
+.story-intro-divider{
+  width:1px;height:36px;margin:28px auto 20px;
+  background:linear-gradient(to bottom,transparent,var(--latte) 50%,transparent);
+}
+.story-intro-note{
+  font-size:12px;font-weight:300;letter-spacing:.14em;
+  color:var(--text3);font-style:italic;
+}
+
+/* ---------- WAVE blocks ---------- */
+.wdiv-timeline{
+  background:var(--cream);
+  overflow:hidden;line-height:0;
+}
+.wdiv-timeline svg{
+  display:block;width:120%;margin-left:-10%;height:80px;
+}
+.wdiv-closing{
+  background:var(--cream2);
+  overflow:hidden;line-height:0;
+}
+.wdiv-closing svg{
+  display:block;width:120%;margin-left:-10%;height:80px;
+}
+
+/* ---------- TIMELINE ---------- */
+.timeline-sec{
+  background:var(--cream2);
+  padding:90px 0 140px;
+  position:relative;
+  overflow:hidden;
+}
+/* 背景の大きなシグネチャ（装飾） */
+.timeline-sec::before{
+  content:'Our Story';
+  position:absolute;top:40px;left:50%;
+  transform:translateX(-50%);
+  font-family:'DM Sans',sans-serif;
+  font-size:180px;font-weight:300;font-style:italic;
+  color:var(--white);
+  opacity:.35;
+  pointer-events:none;
+  letter-spacing:-.02em;
+  white-space:nowrap;
+  z-index:0;
+}
+.timeline-head{
+  position:relative;z-index:1;
+  text-align:center;
+  max-width:720px;margin:0 auto 72px;
+  padding:0 48px;
+}
+.timeline-head .sec-tag{justify-content:center}
+.timeline-head .sec-tag::after{
+  content:'';width:20px;height:1px;background:var(--latte2);
+}
+
+.timeline{
+  position:relative;z-index:1;
+  max-width:1120px;margin:0 auto;
+  padding:0 48px;
+}
+.timeline-axis{
+  position:absolute;top:8px;bottom:60px;
+  left:50%;width:1px;
+  background:linear-gradient(to bottom,
+    rgba(196,168,130,0) 0%,
+    rgba(196,168,130,.55) 8%,
+    rgba(196,168,130,.55) 92%,
+    rgba(196,168,130,0) 100%);
+  transform:translateX(-.5px);
+}
+
+.tl-node{
+  position:relative;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-auto-flow:dense;
+  gap:64px;
+  padding:40px 0;
+}
+.tl-node[data-side="right"] .tl-card{grid-column:2;grid-row:1}
+.tl-node[data-side="left"]  .tl-card{grid-column:1;grid-row:1}
+
+.tl-dot{display:none}
+
+.tl-card{
+  position:relative;
+  background:var(--cream);
+  border:1px solid var(--line);
+  border-radius:20px;
+  padding:40px 40px 36px;
+  box-shadow:0 18px 44px -24px rgba(92,61,44,.18);
+  transition:transform .5s ease,box-shadow .5s ease;
+}
+.tl-card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 28px 56px -28px rgba(92,61,44,.28);
+}
+/* カードから中央軸に伸びる小さな腕 */
+.tl-node[data-side="right"] .tl-card::before{
+  content:'';position:absolute;top:64px;left:-32px;
+  width:32px;height:1px;background:var(--latte);opacity:.55;
+}
+.tl-node[data-side="left"]  .tl-card::before{
+  content:'';position:absolute;top:64px;right:-32px;
+  width:32px;height:1px;background:var(--latte);opacity:.55;
+}
+
+.tl-chapter{
+  font-family:'DM Sans',sans-serif;
+  font-size:10px;font-weight:400;letter-spacing:.35em;
+  color:var(--latte2);text-transform:uppercase;
+  margin-bottom:14px;
+}
+.tl-date{
+  display:inline-block;
+  font-family:'DM Sans',sans-serif;
+  font-size:11px;font-weight:500;letter-spacing:.18em;
+  color:var(--brown2);
+  padding:6px 14px;border-radius:30px;
+  background:rgba(196,168,130,.14);
+  border:1px solid rgba(196,168,130,.3);
+  text-transform:uppercase;
+  margin-bottom:20px;
+}
+.tl-title{
+  font-family:'DM Sans',sans-serif;
+  font-size:40px;font-weight:300;
+  color:var(--brown2);line-height:1.05;
+  margin-bottom:6px;
+  letter-spacing:-.005em;
+}
+.tl-title em{font-style:italic;font-weight:300;color:var(--brown)}
+.tl-sub{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:13px;font-weight:400;letter-spacing:.14em;
+  color:var(--text2);
+  margin-bottom:22px;
+  padding-bottom:22px;
+  border-bottom:1px dashed rgba(196,168,130,.35);
+}
+/* ---------- TIMELINE POSTCARD ---------- */
+.tl-postcard{
+  align-self:stretch;
+  justify-self:stretch;
+  position:relative;
+  width:100%;
+  display:flex;
+  flex-direction:column;
+  padding:14px 14px 40px;
+  background:#FBF7EE;
+  border-radius:4px;
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.7) inset,
+    0 22px 44px -22px rgba(60,40,24,.35),
+    0 8px 18px -12px rgba(60,40,24,.25);
+  transform:rotate(-2.4deg);
+  transform-origin:center center;
+  transition:transform .5s cubic-bezier(.2,.8,.2,1),box-shadow .5s ease;
+}
+.tl-postcard::before,
+.tl-postcard::after{
+  /* 紙のノイズ感 */
+  content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.07'/%3E%3C/svg%3E");
+  border-radius:4px;
+}
+.tl-postcard::after{
+  /* 上辺中央のマスキングテープ（写真を壁に貼ったイメージ） */
+  content:'';
+  width:96px;height:24px;
+  top:-12px;left:50%;
+  transform:translateX(-50%) rotate(-1deg);
+  background:rgba(196,168,130,.6);
+  border:1px solid rgba(196,168,130,.3);
+  box-shadow:0 2px 6px -2px rgba(92,61,44,.3);
+  border-radius:1px;
+  opacity:.9;
+  background-image:
+    linear-gradient(90deg,rgba(255,255,255,.35) 0%,rgba(255,255,255,0) 35%,rgba(255,255,255,0) 65%,rgba(255,255,255,.25) 100%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='24'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100' height='24' filter='url(%23n)' opacity='.22'/%3E%3C/svg%3E");
+}
+.tl-postcard:hover{
+  transform:rotate(-.8deg) translateY(-4px);
+  box-shadow:
+    0 1px 0 rgba(255,255,255,.7) inset,
+    0 32px 54px -24px rgba(60,40,24,.45),
+    0 10px 20px -12px rgba(60,40,24,.3);
+}
+/* フレームはカード高さに合わせて伸びる（画像はcoverでトリミング） */
+.tl-postcard-frame{
+  position:relative;
+  overflow:hidden;
+  border-radius:2px;
+  flex:1 1 0;
+  min-height:320px;
+  background:#1C1410;
+}
+.tl-postcard-frame img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  filter:saturate(.82) brightness(.95) contrast(1.02);
+}
+/* 章ごとの切り取り位置を個別調整 */
+.tl-postcard[data-focus="top"]    .tl-postcard-frame img{object-position:center top}
+.tl-postcard[data-focus="bottom"] .tl-postcard-frame img{object-position:center bottom}
+.tl-postcard[data-focus="right"]  .tl-postcard-frame img{object-position:right center}
+.tl-postcard[data-focus="left"]   .tl-postcard-frame img{object-position:left center}
+.tl-postcard-caption{
+  position:absolute;left:0;right:0;bottom:0;
+  padding:16px 14px 12px;
+  display:flex;flex-direction:column;gap:3px;
+  background:linear-gradient(to top,rgba(28,20,16,.6),rgba(28,20,16,0) 90%);
+  color:rgba(250,250,246,.95);
+}
+.tl-postcard-title{
+  font-family:'DM Sans',sans-serif;
+  font-size:13px;font-weight:500;font-style:italic;
+  letter-spacing:.04em;
+}
+.tl-postcard-sub{
+  font-family:'DM Sans',sans-serif;
+  font-size:9px;font-weight:400;letter-spacing:.25em;
+  text-transform:uppercase;
+  color:rgba(250,250,246,.78);
+}
+.tl-postcard-stamp{
+  position:absolute;right:20px;bottom:10px;
+  width:60px;height:26px;
+  display:flex;align-items:center;justify-content:center;
+  font-family:'DM Sans',sans-serif;
+  font-size:8px;font-weight:500;letter-spacing:.18em;
+  text-align:center;line-height:1.15;
+  color:var(--brown2);
+  border:1px dashed rgba(92,61,44,.55);
+  border-radius:2px;
+  transform:rotate(-6deg);
+  opacity:.75;
+  background:rgba(255,255,255,.35);
+}
+
+/* 左右配置：カードと反対側にポストカードを置く */
+.tl-node[data-side="right"] .tl-postcard{grid-column:1;grid-row:1;transform:rotate(-2.4deg)}
+.tl-node[data-side="left"]  .tl-postcard{grid-column:2;grid-row:1;transform:rotate(2.4deg)}
+.tl-node[data-side="right"] .tl-postcard:hover{transform:rotate(-.8deg) translateY(-4px)}
+.tl-node[data-side="left"]  .tl-postcard:hover{transform:rotate(.8deg) translateY(-4px)}
+
+.tl-body{
+  font-size:13px;font-weight:300;line-height:2.05;
+  color:var(--text);letter-spacing:.04em;
+  margin-bottom:16px;
+}
+.tl-body:last-of-type{margin-bottom:0}
+.tl-quote{
+  margin:0 0 16px;
+  padding:0;
+  background:transparent;
+  border:none;
+  border-radius:0;
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:13px;font-weight:300;line-height:2.05;
+  color:var(--text);
+  letter-spacing:.04em;
+}
+.tl-hl{
+  color:var(--brown2);font-weight:500;
+  background:linear-gradient(transparent 60%,rgba(196,168,130,.28) 60%);
+  padding:0 2px;
+}
+.tl-ruby{
+  font-size:11px;color:var(--text3);
+  font-family:'Noto Sans JP',sans-serif;
+  font-weight:300;
+  letter-spacing:.02em;
+}
+
+.tl-end{
+  position:relative;
+  display:flex;justify-content:center;
+  margin-top:32px;
+  color:var(--latte);
+}
+.tl-end svg{width:36px;height:36px;display:block;opacity:.75}
+
+/* ---------- CLOSING ---------- */
+.closing-sec{
+  background:var(--black);
+  padding:120px 0 140px;
+  text-align:center;
+  position:relative;
+}
+.closing-inner{
+  max-width:720px;margin:0 auto;padding:0 48px;
+}
+.closing-sec .sec-tag{
+  justify-content:center;color:var(--latte);
+}
+.closing-sec .sec-tag::before{background:var(--latte)}
+.closing-sec .sec-tag::after{
+  content:'';width:20px;height:1px;background:var(--latte);
+}
+.closing-h2{
+  color:var(--white);font-size:64px;margin-bottom:28px;
+}
+.closing-h2 em{color:var(--latte)}
+.closing-body{
+  font-size:14px;font-weight:300;line-height:2.2;
+  color:rgba(250,250,246,.72);letter-spacing:.08em;
+  margin-bottom:44px;
+}
+.closing-ctas{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+}
+
+/* ---------- ABOUT PAGE — RESPONSIVE (tablet 〜 900px) ---------- */
+@media(max-width:900px){
+  /* HERO */
+  .about-hero{height:auto;min-height:320px;padding:104px 0 56px}
+  .about-hero-content{padding:0 32px;max-width:100%}
+  .about-hero-title{font-size:56px;margin:12px 0}
+  .about-hero-sub{font-size:12px}
+  .about-hero-scroll{display:none}
+
+  /* INTRO */
+  .story-intro{padding:56px 0 48px}
+  .story-intro-inner{padding:0 28px}
+  .story-intro-body{font-size:13px}
+  .story-intro-divider{height:30px;margin:22px auto 16px}
+
+  /* WAVES */
+  .wdiv-timeline svg,.wdiv-closing svg{height:50px}
+
+  /* TIMELINE */
+  .timeline-sec{padding:56px 0 80px}
+  .timeline-sec::before{font-size:90px;top:24px}
+  .timeline-head{margin-bottom:40px;padding:0 28px}
+  .timeline{padding:0 20px}
+
+  /* 軸を左端に寄せる */
+  .timeline-axis{left:24px;transform:none}
+
+  /* 1列縦積み、グリッド行の重なりを解除 */
+  .tl-node{
+    grid-template-columns:1fr;
+    grid-auto-flow:row;
+    gap:0;
+    padding:24px 0 32px 52px;
+  }
+  .tl-node[data-side="right"] .tl-card,
+  .tl-node[data-side="left"]  .tl-card{
+    grid-column:1;grid-row:auto;
+  }
+  .tl-dot{left:24px;top:42px}
+  .tl-node[data-side="right"] .tl-card::before,
+  .tl-node[data-side="left"]  .tl-card::before{
+    left:-28px;right:auto;top:42px;width:28px;
+  }
+  .tl-card{padding:28px 24px 26px;border-radius:16px}
+  .tl-title{font-size:30px}
+  .tl-sub{font-size:12px;margin-bottom:18px;padding-bottom:18px}
+  .tl-end{margin-left:-28px}
+
+  /* ポストカード：カードの上に重ねず、上段に配置 */
+  .tl-postcard,
+  .tl-node[data-side="right"] .tl-postcard,
+  .tl-node[data-side="left"]  .tl-postcard{
+    grid-column:1;
+    grid-row:auto;
+    align-self:auto;
+    width:min(86%,320px);
+    margin:0 auto 20px;
+    transform:rotate(-2deg);
+    padding:12px 12px 36px;
+  }
+  .tl-node[data-side="left"] .tl-postcard{transform:rotate(2deg)}
+  .tl-node[data-side="right"] .tl-postcard:hover{transform:rotate(-.6deg) translateY(-3px)}
+  .tl-node[data-side="left"]  .tl-postcard:hover{transform:rotate(.6deg) translateY(-3px)}
+  .tl-postcard-frame{min-height:240px}
+  .tl-postcard::after{width:80px;height:20px;top:-10px}
+  .tl-postcard-stamp{width:52px;height:22px;font-size:7px;right:14px;bottom:8px}
+
+  /* CLOSING */
+  .closing-sec{padding:80px 0 100px}
+  .closing-inner{padding:0 28px}
+  .closing-h2{font-size:46px}
+  .closing-body{font-size:13px}
+}
+
+/* ---------- ABOUT PAGE — RESPONSIVE (mobile 〜 480px) ---------- */
+@media(max-width:480px){
+  /* HERO */
+  .about-hero{min-height:260px;padding:88px 0 40px}
+  .about-hero-title{font-size:42px;margin:10px 0}
+  .about-hero-sub{font-size:11px;line-height:1.85}
+  .hero-wave{height:60px}
+
+  /* INTRO */
+  .story-intro{padding:44px 0 36px}
+  .story-intro-inner{padding:0 20px}
+  .story-intro-body{font-size:12px;line-height:2}
+  .story-intro-note{font-size:11px}
+
+  /* WAVES */
+  .wdiv-timeline svg,.wdiv-closing svg{height:40px}
+
+  /* TIMELINE */
+  .timeline-sec{padding:44px 0 64px}
+  .timeline-sec::before{font-size:56px;top:16px}
+  .timeline-head{margin-bottom:28px;padding:0 20px}
+  .timeline{padding:0 16px}
+  .timeline-axis{left:18px;top:4px;bottom:40px}
+
+  .tl-node{padding:18px 0 22px 40px}
+  .tl-dot{left:18px;top:30px;width:12px;height:12px}
+  .tl-node[data-side="right"] .tl-card::before,
+  .tl-node[data-side="left"]  .tl-card::before{
+    left:-22px;top:32px;width:22px;
+  }
+  .tl-card{padding:22px 18px 22px;border-radius:14px}
+  .tl-chapter{font-size:9px;margin-bottom:10px;letter-spacing:.3em}
+  .tl-date{font-size:10px;padding:5px 12px;margin-bottom:14px}
+  .tl-title{font-size:26px}
+  .tl-sub{font-size:11px;margin-bottom:14px;padding-bottom:14px}
+  .tl-body{font-size:12px;line-height:2}
+  .tl-quote{font-size:12px;line-height:1.9}
+  .tl-end svg{width:28px;height:28px}
+
+  /* ポストカード */
+  .tl-postcard,
+  .tl-node[data-side="right"] .tl-postcard,
+  .tl-node[data-side="left"]  .tl-postcard{
+    width:min(92%,280px);
+    padding:10px 10px 30px;
+    margin:0 auto 16px;
+  }
+  .tl-postcard-frame{min-height:200px}
+  .tl-postcard::after{width:66px;height:18px;top:-8px}
+  .tl-postcard-title{font-size:12px}
+  .tl-postcard-sub{font-size:8px;letter-spacing:.22em}
+  .tl-postcard-stamp{width:44px;height:18px;font-size:6px;right:12px;bottom:6px}
+
+  /* CLOSING */
+  .closing-sec{padding:60px 0 80px}
+  .closing-inner{padding:0 20px}
+  .closing-h2{font-size:38px;margin-bottom:20px}
+  .closing-body{font-size:12px;line-height:2;margin-bottom:32px}
+  .closing-ctas .btn-w,.closing-ctas .btn-ow{padding:12px 22px;font-size:11px}
 }
